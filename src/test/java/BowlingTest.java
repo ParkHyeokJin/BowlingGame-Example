@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 public class BowlingTest {
 
     private Game game;
@@ -7,5 +10,12 @@ public class BowlingTest {
     @Test
     public void canRoll() {
         game.roll(0);
+    }
+
+    @Test
+    public void gutterGame() {
+        for(int i = 0; i < 20; i++)
+            game.roll(0);
+        assertThat(game.score(), is(0));
     }
 }
