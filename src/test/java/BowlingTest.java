@@ -1,9 +1,12 @@
 import org.junit.Test;
 
 public class BowlingTest {
+
+    private Game game;
+
     @Test
     public void canCreate(){
-        Game game = new Game();
+        game = new Game();
     }
 
     @Test
