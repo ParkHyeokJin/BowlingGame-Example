@@ -8,7 +8,7 @@ public class Game {
         int score = 0;
         int firstFrame = 0;
         for(int frame = 0; frame < 10; frame++) {
-            if(isStrike(rolls[firstFrame])) { // strike
+            if(isStrike(rolls[firstFrame])) {
                 score += 10 + rolls[firstFrame + 1] + rolls[firstFrame + 2];
                 firstFrame += 1;
             }else if(isSpare(firstFrame)) {
