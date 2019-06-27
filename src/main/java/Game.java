@@ -6,15 +6,18 @@ public class Game {
     }
     public Integer score() {
         int score = 0;
-        int i = 0;
+        int firstFrame = 0;
         for(int frame = 0; frame < 10; frame++) {
-            if(isSpare(i)) {
-                score += 10 + rolls[i + 2];
-                i += 2;
+            if(rolls[firstFrame] == 10) { // strike
+                score += 10 + rolls[firstFrame + 1] + rolls[firstFrame + 2];
+                firstFrame += 1;
+            }else if(isSpare(firstFrame)) {
+                score += 10 + rolls[firstFrame + 2];
+                firstFrame += 2;
             }
             else {
-                score += rolls[i] + rolls[i + 1];
-                i += 2;
+                score += rolls[firstFrame] + rolls[firstFrame + 1];
+                firstFrame += 2;
             }
         }
         return score;
