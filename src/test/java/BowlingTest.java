@@ -46,10 +46,14 @@ public class BowlingTest {
 
     @Test
     public void oneStrike() {
-        game.roll(10);
+        rollStrike();
         game.roll(5);
         game.roll(3);
         rollMany(16, 0);
         assertThat(game.score(), is(26));
+    }
+
+    private void rollStrike() {
+        game.roll(10);
     }
 }
