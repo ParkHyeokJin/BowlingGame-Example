@@ -1,4 +1,9 @@
 public class Game {
-    public void roll(int i) {
+    private Integer score = 0;
+    public void roll(int pins) {
+        score += pins;
+    }
+    public Integer score() {
+        return score;
     }
 }
